@@ -1,6 +1,11 @@
 Feature: Detect network topology
   Background:
-    Given a file named "triangle.conf" with:
+    Given I set the environment variables to:
+      | variable         | value |
+      | TREMA_LOG_DIR    | .     |
+      | TREMA_PID_DIR    | .     |
+      | TREMA_SOCKET_DIR | .     |
+    And a file named "triangle.conf" with:
       """
       vswitch { dpid 0x1 }
       vswitch { dpid 0x2 }
